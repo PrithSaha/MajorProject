@@ -14,8 +14,8 @@ const listingSchema=new Schema({
     },
     url:{
         type: String,
-    // default:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-    // set:(v)=> v ==="" ?"https://images.unsplash.com/photo-1507525428034-b723cf961d3e":v,
+    default:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    set:(v)=> v ==="" ?"https://images.unsplash.com/photo-1507525428034-b723cf961d3e":v,
     },
 },
     price: Number,
