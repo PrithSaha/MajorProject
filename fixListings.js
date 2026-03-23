@@ -4,12 +4,12 @@ const Listing = require("./models/listing");
 
 async function main() {
     await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust");
-    console.log("✅ DB connected");
+    console.log("DB connected");
 
     await fixListings();
 
     mongoose.connection.close();
-    console.log("🔌 DB closed");
+    console.log(" DB closed");
 }
 
 async function fixListings() {
@@ -18,15 +18,14 @@ async function fixListings() {
     for (let listing of listings) {
 
         if (listing.geometry && listing.geometry.coordinates?.length) {
-            console.log("⏭️ Skipped:", listing.title);
+            console.log("Skipped:", listing.title);
             continue;
         }
 
         try {
-            // 🔥 Better query
             const query = `${listing.location}, ${listing.country}`;
 
-            console.log("🔍 Searching:", query);
+            console.log("Searching:", query);
 
             const geoRes = await axios.get(
                 "https://nominatim.openstreetmap.org/search",
@@ -43,7 +42,7 @@ async function fixListings() {
             );
 
             if (!geoRes.data.length) {
-                console.log("❌ Not found:", listing.title);
+                console.log("Not found:", listing.title);
                 continue;
             }
 
@@ -58,13 +57,12 @@ async function fixListings() {
             };
 
             await listing.save();
-            console.log("✅ Fixed:", listing.title);
+            console.log(" Fixed:", listing.title);
 
-            // ⏳ IMPORTANT: delay to avoid rate limit
             await new Promise(res => setTimeout(res, 1000));
 
         } catch (err) {
-            console.log("⚠️ Error:", listing.title, "-", err.message);
+            console.log("rror:", listing.title, "-", err.message);
         }
     }
 }
