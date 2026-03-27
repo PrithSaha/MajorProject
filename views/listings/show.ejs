@@ -8,7 +8,7 @@
         </div>
         <div class="card col-6 offset-3 show-card listing-card" >
         <img 
-        src="<%= listing.image?.url || 'https://images.unsplash.com/photo-1502673530728-f79b4cab31b1' %>" 
+        src="<%= listing.image?.url || 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e' %>" 
         class="card-img-top show-img" 
         alt="listing_image">
         <div class="card-body">
@@ -16,7 +16,7 @@
             <i>Owned by: <%= listing.owner ? listing.owner.username : "Unknown" %></i></p>
             <!-- <b><%= listing.title %></b> -->
             <p class="card-text"><%= listing.description %></p>
-            <p class="card-text">&#8377; <%= listing.price.toLocaleString("en-IN") %></p> 
+            <p class="card-text"> &#377; <%= listing.price.toLocaleString("en-IN") %></p> 
             <p class="card-text"><%= listing.location %></p> 
             <p class="card-text"><%= listing.country %></p>
         </div>
@@ -37,7 +37,7 @@
         <form action="/listings/<%= listing._id%>/reviews" method="POST" novalidate class="needs-validation">
             
             <div class="mb-3 mt-3">
-                <label for="rating" class="form-label">Rating</label>
+            <label for="rating" class="form-label">Rating</label>
             <fieldset class="starability-slot">
             <input type="radio" id="first-rate1" name="review[rating]" value="1" />
             <label for="first-rate1" title="Terrible">1 star</label>
