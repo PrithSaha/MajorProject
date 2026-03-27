@@ -88,21 +88,21 @@ module.exports.renderEditForm=async (req,res)=>{
 module.exports.updateListing = async (req, res) => {
     let { id } = req.params;
 
-    //  Update basic fields
+   
     const listing = await Listing.findByIdAndUpdate(
         id,
         { ...req.body.listing },
         { new: true }
     );
 
-    //  Update image if present
+   
     if (typeof req.file !== "undefined") {
         let url = req.file.path;
         let filename = req.file.filename;
         listing.image = { url, filename };
     }
 
-    //  FIX: Update coordinates
+   
     const location = req.body.listing.location;
 
     const geoRes = await axios.get(
