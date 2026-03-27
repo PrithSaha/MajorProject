@@ -28,7 +28,7 @@ const listingSchema=new Schema({
         default: "Point"
     },
     coordinates: {
-        type: [Number] // [lng, lat]
+        type: [Number] 
     }
 },
     reviews:[
@@ -48,7 +48,7 @@ const listingSchema=new Schema({
     default: "Point"
   },
   coordinates: {
-    type: [Number] // [lng, lat]
+    type: [Number] 
   }
 },
 });
