@@ -20,8 +20,7 @@ module.exports.showListing= async (req,res)=>{
     let avgRating = 0;
     if (listing.reviews.length > 0) {
         avgRating =
-            listing.reviews.reduce((sum, review) => sum + review.rating, 0) /
-            listing.reviews.length;
+            listing.reviews.reduce((sum, review) => sum + review.rating, 0) /listing.reviews.length;
     }
     console.log(listing);
     res.render("listings/show.ejs", {listing, avgRating });
