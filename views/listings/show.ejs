@@ -29,11 +29,13 @@
         </form>
         </div>
      <%}%>
-     <% if(currUser) { %> 
-        <div class="btns mb-3" >
-        <a href="/listings/<%= listing._id %>/book" class="btn btn-dark col-1 offset-3 edit-btn">Book</a>
+            <% if(currUser) { %> 
+        <div class="btns mb-3">
+            <form action="/listings/<%= listing._id %>/book" method="POST">
+            <button class="btn btn-dark col-1 offset-3 edit-btn">Book</button>
+            </form>
         </div>
-     <%}%>
+        <% } %>
     <div class="col-8 offset-3 mb-3">
        
         <% if(currUser){ %> 

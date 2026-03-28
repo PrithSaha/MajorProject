@@ -26,8 +26,11 @@ router
     .put(isLoggedIn,isOwner,upload.single("listing[image]"),validateListing,wrapAsync(listingController.updateListing))
     .delete(isLoggedIn,isOwner, wrapAsync(listingController.destroyListing));
     
+    
 
 //Edit Route
 router.get("/:id/edit", isLoggedIn,isOwner,wrapAsync(listingController.renderEditForm));
+//Book Route
+router.post("/:id/book", isLoggedIn, wrapAsync(listingController.book));
 
 module.exports=router;
