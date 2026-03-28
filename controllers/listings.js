@@ -149,7 +149,3 @@ module.exports.destroyListing =async (req,res)=>{
     res.redirect("/listings");
 };
 
-module.exports.book = async (req, res) => {
-    req.flash("success", "Booked successfully!");
-    res.redirect(`/listings/${req.params.id}`);
-};

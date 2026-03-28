@@ -30,7 +30,5 @@ router
 
 //Edit Route
 router.get("/:id/edit", isLoggedIn,isOwner,wrapAsync(listingController.renderEditForm));
-//Book Route
-router.post("/:id/book", isLoggedIn, wrapAsync(listingController.book));
 
 module.exports=router;
