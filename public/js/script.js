@@ -60,7 +60,7 @@
 
   const formatMoney = value => {
     const amount = Number.isFinite(value) ? value : 0
-    return `$${amount.toFixed(2)}`
+   return `₹${amount.toFixed(2)}`
   }
 
   const showBookingPanel = () => {
