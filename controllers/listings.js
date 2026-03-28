@@ -148,3 +148,7 @@ module.exports.destroyListing =async (req,res)=>{
     req.flash("success", "listing deleted!");
     res.redirect("/listings");
 };
+
+module.exports.book= async(req,res)=>{
+    req.flash("success", "booked successfuly");
+};
