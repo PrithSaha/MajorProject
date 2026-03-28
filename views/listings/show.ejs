@@ -17,7 +17,7 @@
             <!-- <b><%= listing.title %></b> -->
             <p class="card-text"><%= listing.description %></p>
             <p id="listing-price" class="card-text" data-price="<%= listing.price %>">&#8377; <%= listing.price.toLocaleString("en-IN") %></p> 
-             <% if(!currUser && currUser._id.equals(listing.owner._id)) { %> 
+             <% if(currUser && !currUser._id.equals(listing.owner._id)) { %> 
             <div class="mt-3">
                 <button id="book-now-btn" type="button" class="btn btn-dark w-100">Book Now</button>
                 
