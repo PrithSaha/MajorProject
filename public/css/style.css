@@ -116,6 +116,12 @@ body{
    border-radius: 1rem;
 }
 
+@media (max-width:768px){
+   .show-img{
+      height: 250px;
+   }
+}
+
 .btns{
    display: flex;
 }
