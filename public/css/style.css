@@ -133,3 +133,41 @@ body{
 
 /* Map */
 #map{height: 400px; width: 100%;}
+
+
+@media (max-width:768px){
+
+  .navbar-collapse{
+    padding-top: 1rem;
+  }
+
+  .search-inp{
+    width: 100% !important;
+    margin-bottom: 0.5rem;
+    padding: 0.6rem 1rem !important;
+  }
+
+  .btn-search{
+    width: 100%;
+    justify-content: center;
+  }
+
+  #filters{
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+  }
+
+  #filters::-webkit-scrollbar{
+    display: none;
+  }
+
+  .filter{
+    min-width: 70px;
+  }
+
+  .tax-toogle{
+    min-width: 300px;
+  }
+}
